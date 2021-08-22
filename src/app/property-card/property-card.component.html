@@ -1,0 +1,64 @@
+<div class="grid">
+    <div *ngFor="let property of properties | sortBy: [sortField, sortDirection]; let i = index" class="col-4">
+        <p-card header="" subheader="" [style]="{width: '360px'}" styleClass="p-card-shadow">
+            <ng-template pTemplate="header">
+                <img alt="Card" [src]="getImagePath(i)">
+            </ng-template>
+            <ng-template pTemplate="content pt-1">
+                <!-- start -->
+                <div class="caption">
+                    <div *ngIf="!property.showDetails">
+                        <h4>
+                            <span class="label label-primary">
+                                {{ property.type }}
+                            </span>
+                        </h4>
+                        <h4>
+                            <i class="glyphicon glyphicon-tag"></i>
+                            {{ property.price | currency:'GBP':true }}
+                        </h4>
+                        <h4>
+                            <i class="glyphicon glyphicon-home"></i>
+                            {{ property.address }}
+                        </h4>
+
+                        <hr>
+
+                        <!-- <p-button class="btn btn-sm btn-success" *ngIf="!property.showDetails"
+                            (click)="property.showDetails = !property.showDetails">
+                            Details
+                        </p-button> -->
+
+                    </div>
+
+                    <div>
+                        <div class="details">
+                            <h5>
+                                <span class="label label-primary">
+                                    Beds: {{ property.bedrooms }}
+                                </span>
+                                <span class="label label-primary">
+                                    Baths: {{ property.bathrooms }}
+                                </span>
+                                <span class="label label-primary">
+                                    SqFt: {{ property.area }}
+                                </span>
+                            </h5>
+
+                            <p>{{ property.description }}</p>
+
+                            <hr>
+
+                            <!-- <p-button class="btn btn-sm btn-danger"
+                                (click)="property.showDetails = !property.showDetails">
+                                Close
+                            </p-button> -->
+
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <!-- end -->
+        </p-card>
+    </div>
+</div>
