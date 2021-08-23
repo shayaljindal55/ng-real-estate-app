@@ -7,17 +7,8 @@ export interface Properties {
     description: string,
     bedrooms: number,
     bathrooms: number,
-    area: string,
-    image: string
+    postalcode: string,
+    image: string,
+    status: string
 }
 
-export interface HttpError {
-    statusText: string;
-}
-
-export interface CatchError extends CatchErrorParams {
-}
-
-export interface CatchErrorParams {
-    error: '', status: '', message: ''
-}

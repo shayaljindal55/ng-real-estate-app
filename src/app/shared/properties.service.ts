@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { Properties } from './common.model';
 import { map } from 'rxjs/operators';
 import { retry, catchError } from 'rxjs/operators';
-import { Observable, throwError } from 'rxjs';
+import { Observable, Subject, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 
 @Injectable()
 export class PropertiesService {
     constructor(private httpClient: HttpClient) { }
-
+    public changePropertyData = new Subject<any>();
     getAllProperties(): Observable<Properties[]> {
         return this.httpClient.get<Properties[]>("http://localhost:3000"
             + '/data')
@@ -17,6 +17,10 @@ export class PropertiesService {
                 retry(1),
                 catchError(this.processError)
             )
+    }
+
+    changePropertyStatus(property: any) {
+        this.changePropertyData.next(property);
     }
 
     processError(err: any) {

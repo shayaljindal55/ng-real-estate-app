@@ -8,8 +8,9 @@
             "description": "Excellent place, really nice view!",
             "bedrooms": 2,
             "bathrooms": 1,
-            "area": "921",
-            "image": "crib-1"
+            "postalcode": "PO16 7GZ",
+            "image": "crib-1",
+            "status": "active"
         },
         {
             "id": 2,
@@ -19,8 +20,9 @@
             "description": "Beautiful home with lots of space for a large family.",
             "bedrooms": 4,
             "bathrooms": 3,
-            "area": "2145",
-            "image": "crib-2"
+            "postalcode": "GU16 7HF",
+            "image": "crib-2",
+            "status": "active"
         },
         {
             "id": 3,
@@ -30,8 +32,9 @@
             "description": "Great neighbourhood and lot's of nice green space.",
             "bedrooms": 3,
             "bathrooms": 2,
-            "area": "1500",
-            "image": "crib-3"
+            "postalcode": "SW1W 0NY",
+            "image": "crib-3",
+            "status": "expired"
         },
         {
             "id": 4,
@@ -41,8 +44,9 @@
             "description": "Best house on the block!",
             "bedrooms": 6,
             "bathrooms": 4,
-            "area": "3230",
-            "image": "crib-4"
+            "postalcode": "L1 8JQ",
+            "image": "crib-4",
+            "status": "active"
         },
         {
             "id": 5,
@@ -52,8 +56,9 @@
             "description": "Nice little condo with room to grow.",
             "bedrooms": 2,
             "bathrooms": 1,
-            "area": "1023",
-            "image": "crib-5"
+            "postalcode": "LT 9YI",
+            "image": "crib-5",
+            "status": "expired"
         },
         {
             "id": 6,
@@ -63,8 +68,9 @@
             "description": "You'll love the view!",
             "bedrooms": 4,
             "bathrooms": 2,
-            "area": "1788",
-            "image": "crib-6"
+            "postalcode": "HA16 8UB",
+            "image": "crib-6",
+            "status": "active"
         }
     ]
 }

@@ -7,6 +7,7 @@ export interface Properties {
     description: string,
     bedrooms: number,
     bathrooms: number,
-    area: string,
-    image: string
+    postalcode: string,
+    image: string,
+    status: string
 }

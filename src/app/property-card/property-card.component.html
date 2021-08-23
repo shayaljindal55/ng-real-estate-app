@@ -1,5 +1,16 @@
-<div class="grid">
-    <div *ngFor="let property of properties | sortBy: [sortField, sortDirection]; let i = index" class="col-4">
+<div>
+    <div>
+        <h5>Filter by Status</h5>
+        <p-selectButton [options]="propertyStatus" 
+        [(ngModel)]="selectedPropertyStatus" optionLabel="label" optionValue="value"
+        (ngModelChange)="filterProperties()">
+        </p-selectButton>
+    </div>
+</div>
+
+
+<div class="grid pt-2">
+    <div *ngFor="let property of filteresProperties | sortBy: [sortField, sortDirection]; let i = index" class="col-4">
         <p-card header="" subheader="" [style]="{width: '360px'}" styleClass="p-card-shadow">
             <ng-template pTemplate="header">
                 <img alt="Card" [src]="getImagePath(i)">
@@ -13,21 +24,21 @@
                                 {{ property.type }}
                             </span>
                         </h4>
-                        <h4>
+                        <h4 class="price-style">
                             <i class="glyphicon glyphicon-tag"></i>
+                            <h5>Guide Price</h5>
                             {{ property.price | currency:'GBP':true }}
                         </h4>
                         <h4>
                             <i class="glyphicon glyphicon-home"></i>
                             {{ property.address }}
                         </h4>
-
                         <hr>
 
-                        <!-- <p-button class="btn btn-sm btn-success" *ngIf="!property.showDetails"
-                            (click)="property.showDetails = !property.showDetails">
-                            Details
-                        </p-button> -->
+                        <p-button class="btn btn-sm btn-success"
+                            (click)="changePropertyStatus(property.id)">
+                            Toggle Status
+                        </p-button>
 
                     </div>
 
@@ -41,7 +52,10 @@
                                     Baths: {{ property.bathrooms }}
                                 </span>
                                 <span class="label label-primary">
-                                    SqFt: {{ property.area }}
+                                    SqFt: {{ property.postalcode }}
+                                </span>
+                                <span class="label label-primary">
+                                    Status: {{ property.status }}
                                 </span>
                             </h5>
 

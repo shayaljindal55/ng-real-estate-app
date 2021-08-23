@@ -5,8 +5,8 @@ import { SkeletonModule } from 'primeng/skeleton';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { SortByPipe } from '../shared/sort-by.pipe';
-// import { PropertyCardRoutingModule } from './property-card-routing.module';
-
+import {SelectButtonModule} from 'primeng/selectbutton';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [PropertyCardComponent, SortByPipe],
@@ -14,8 +14,9 @@ import { SortByPipe } from '../shared/sort-by.pipe';
     CommonModule,
     SkeletonModule,
     CardModule,
-    ButtonModule
-    // PropertyCardRoutingModule
+    ButtonModule,
+    SelectButtonModule,
+    FormsModule
   ]
 })
 export class PropertyCardModule { }

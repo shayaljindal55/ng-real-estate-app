@@ -9,3 +9,8 @@ export const PropertiesSortFields: Array<string> = [
     "area",
     "image"
 ]
+
+export const PropertyStatus = [
+    { label: 'Active', value: 'active' },
+    { label: 'Expired', value: 'expired' }
+]
