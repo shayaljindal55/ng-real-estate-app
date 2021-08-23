@@ -1,4 +1,4 @@
-<div>
+<div class="pb-10">
     <div>
         <h5>Filter by Status</h5>
         <p-selectButton [options]="propertyStatus" [(ngModel)]="selectedPropertyStatus" optionLabel="label"
@@ -22,22 +22,23 @@
                             <span class="label label-primary">
                                 {{ property.type }}
                             </span>
+                            <span class="float-right">
+                                <img src="../../assets/images/active.png" class="status" *ngIf="property.status===1" />
+                                <img src="../../assets/images/expired.jpg" class="status" *ngIf="property.status===2" />
+                            </span>
                         </h4>
                         <h4 class="price-style">
                             <i class="glyphicon glyphicon-tag"></i>
                             <h5>Guide Price</h5>
                             {{ property.price | currency:'GBP':true }}
+
+                            <div class="expire-property float-right" (click)="changePropertyStatus(property.id)" *ngIf="property.status===1" >
+                                Set as Expired
+                            </div>
                         </h4>
-                        <!-- <h4>
-                            <i class="glyphicon glyphicon-home"></i>
-                            {{ property.address }}
-                        </h4> -->
+
+                        
                         <hr>
-
-                        <p-button class="btn btn-sm btn-success" (click)="changePropertyStatus(property.id)">
-                            Toggle Status
-                        </p-button>
-
                     </div>
 
                     <div>
@@ -67,12 +68,6 @@
                                     Postal Code: {{ property.postalcode }}
                                 </span>
                             </h5>
-                            <h5>
-                                <span class="label label-primary">
-                                    Status: {{ property.status }}
-                                </span>
-                            </h5>
-
 
                             <p>{{ property.description }}</p>
 

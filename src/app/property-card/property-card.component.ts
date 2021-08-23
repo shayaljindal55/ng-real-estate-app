@@ -55,7 +55,7 @@ export class PropertyCardComponent implements OnInit {
   changePropertyStatus(id: number) {
     let propertyChanged = this.allProperties.find(x => x.id === id);
     if (propertyChanged && propertyChanged.status) {
-      propertyChanged.status = this.selectedPropertyStatus;
+      propertyChanged.status = 2;
       this.propertiesService.changePropertyStatus(propertyChanged);
     }
   }
