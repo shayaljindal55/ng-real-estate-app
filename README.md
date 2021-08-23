@@ -1,5 +1,5 @@
 Real Estate App Built Using Angular 12 and JSON-Server
-![Creating](src/assets/images/screenshot.PNG "screenshot")
+![Creating](src/assets/images/screenshot-1.PNG "screenshot")
 
 # JSON-Server
 Install JSON-Sever using `npm install json-server -g` command
