@@ -31,8 +31,8 @@ export class PropertyCardComponent implements OnInit {
     }, (error: any) => this.errorMessage = error.statusText)
   }
 
-  getImagePath(i: number) {
-    return "../../assets/images/crib-" + (i + 1) + ".jpg";
+  getImagePath(id: number) {
+    return "../../assets/images/crib-" + (id) + ".jpg";
   }
 
   filterProperties() {

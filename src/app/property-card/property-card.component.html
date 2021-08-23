@@ -13,7 +13,7 @@
     <div *ngFor="let property of filteresProperties | sortBy: [sortField, sortDirection]; let i = index" class="col-4">
         <p-card header="" subheader="" [style]="{width: '360px'}" styleClass="p-card-shadow">
             <ng-template pTemplate="header">
-                <img alt="Card" [src]="getImagePath(i)">
+                <img alt="Card" [src]="getImagePath(property.id)">
             </ng-template>
             <ng-template pTemplate="content pt-1">
                 <!-- start -->
