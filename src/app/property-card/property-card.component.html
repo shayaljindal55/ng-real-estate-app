@@ -1,16 +1,15 @@
 <div>
     <div>
         <h5>Filter by Status</h5>
-        <p-selectButton [options]="propertyStatus" 
-        [(ngModel)]="selectedPropertyStatus" optionLabel="label" optionValue="value"
-        (ngModelChange)="filterProperties()">
+        <p-selectButton [options]="propertyStatus" [(ngModel)]="selectedPropertyStatus" optionLabel="label"
+            optionValue="value" (ngModelChange)="filterProperties($event)">
         </p-selectButton>
     </div>
 </div>
 
 
 <div class="grid pt-2">
-    <div *ngFor="let property of filteresProperties | sortBy: [sortField, sortDirection]; let i = index" class="col-4">
+    <div *ngFor="let property of filteredProperties | sortBy: [sortField, sortDirection]; let i = index" class="col-4">
         <p-card header="" subheader="" [style]="{width: '360px'}" styleClass="p-card-shadow">
             <ng-template pTemplate="header">
                 <img alt="Card" [src]="getImagePath(property.id)">
@@ -29,14 +28,13 @@
                             <h5>Guide Price</h5>
                             {{ property.price | currency:'GBP':true }}
                         </h4>
-                        <h4>
+                        <!-- <h4>
                             <i class="glyphicon glyphicon-home"></i>
                             {{ property.address }}
-                        </h4>
+                        </h4> -->
                         <hr>
 
-                        <p-button class="btn btn-sm btn-success"
-                            (click)="changePropertyStatus(property.id)">
+                        <p-button class="btn btn-sm btn-success" (click)="changePropertyStatus(property.id)">
                             Toggle Status
                         </p-button>
 
@@ -46,18 +44,35 @@
                         <div class="details">
                             <h5>
                                 <span class="label label-primary">
+                                    <fa-icon [icon]="faBed"></fa-icon>
                                     Beds: {{ property.bedrooms }}
                                 </span>
                                 <span class="label label-primary">
+                                    <fa-icon [icon]="faBath"></fa-icon>
                                     Baths: {{ property.bathrooms }}
                                 </span>
                                 <span class="label label-primary">
-                                    SqFt: {{ property.postalcode }}
+                                    <fa-icon [icon]="faCouch"></fa-icon>
+                                    Reception: {{ property.receptions }}
                                 </span>
+                            </h5>
+
+                            <h5>
+                                <span class="label label-primary">
+                                    Address: {{ property.address }}
+                                </span>
+                            </h5>
+                            <h5>
+                                <span class="label label-primary">
+                                    Postal Code: {{ property.postalcode }}
+                                </span>
+                            </h5>
+                            <h5>
                                 <span class="label label-primary">
                                     Status: {{ property.status }}
                                 </span>
                             </h5>
+
 
                             <p>{{ property.description }}</p>
 

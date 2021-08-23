@@ -9,6 +9,6 @@ export interface Properties {
     bathrooms: number,
     postalcode: string,
     image: string,
-    status: string
+    status: number
 }
 

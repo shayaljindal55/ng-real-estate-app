@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PropertyCardModule } from './property-card/property-card.module';
 import { PropertiesService } from './shared/properties.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PropertiesService } from './shared/properties.service';
     BrowserModule,
     PropertyCardModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [PropertiesService],
   bootstrap: [AppComponent]

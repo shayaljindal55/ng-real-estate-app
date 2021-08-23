@@ -11,6 +11,7 @@ export const PropertiesSortFields: Array<string> = [
 ]
 
 export const PropertyStatus = [
-    { label: 'Active', value: 'active' },
-    { label: 'Expired', value: 'expired' }
+    { label: 'All', value: 0 },
+    { label: 'Active', value: 1 },
+    { label: 'Expired', value: 2 }
 ]
