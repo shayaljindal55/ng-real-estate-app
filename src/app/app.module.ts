@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { PropertyCardModule } from './property-card/property-card.module';
 import { PropertiesService } from './shared/properties.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

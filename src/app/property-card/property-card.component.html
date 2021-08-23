@@ -1,23 +1,24 @@
+<!-- Filter start -->
 <div class="pb-10">
     <div>
-        <h5>Filter by Status</h5>
+        <h4>Filter by Status</h4>
         <p-selectButton [options]="propertyStatus" [(ngModel)]="selectedPropertyStatus" optionLabel="label"
             optionValue="value" (ngModelChange)="filterProperties($event)">
         </p-selectButton>
     </div>
 </div>
-
+<!-- Filter end -->
 
 <div class="grid pt-2">
-    <div *ngFor="let property of filteredProperties | sortBy: [sortField, sortDirection]; let i = index" class="col-4">
+    <div *ngFor="let property of filteredProperties; let i = index" class="col-4">
+        <!-- Property card start -->
         <p-card header="" subheader="" [style]="{width: '360px'}" styleClass="p-card-shadow">
             <ng-template pTemplate="header">
                 <img alt="Card" [src]="getImagePath(property.id)">
             </ng-template>
             <ng-template pTemplate="content pt-1">
-                <!-- start -->
                 <div class="caption">
-                    <div *ngIf="!property.showDetails">
+                    <div>
                         <h4>
                             <span class="label label-primary">
                                 {{ property.type }}
@@ -31,30 +32,24 @@
                             <i class="glyphicon glyphicon-tag"></i>
                             <h5>Guide Price</h5>
                             {{ property.price | currency:'GBP':true }}
-
-                            <div class="expire-property float-right" (click)="changePropertyStatus(property.id)" *ngIf="property.status===1" >
-                                Set as Expired
-                            </div>
                         </h4>
-
-                        
                         <hr>
                     </div>
 
                     <div>
                         <div class="details">
                             <h5>
-                                <span class="label label-primary">
+                                <span class="label label-primary pr-5">
                                     <fa-icon [icon]="faBed"></fa-icon>
                                     Beds: {{ property.bedrooms }}
                                 </span>
-                                <span class="label label-primary">
+                                <span class="label label-primary pr-5">
                                     <fa-icon [icon]="faBath"></fa-icon>
                                     Baths: {{ property.bathrooms }}
                                 </span>
                                 <span class="label label-primary">
                                     <fa-icon [icon]="faCouch"></fa-icon>
-                                    Reception: {{ property.receptions }}
+                                    Receptions: {{ property.receptions }}
                                 </span>
                             </h5>
 
@@ -68,21 +63,16 @@
                                     Postal Code: {{ property.postalcode }}
                                 </span>
                             </h5>
-
-                            <p>{{ property.description }}</p>
-
-                            <hr>
-
-                            <!-- <p-button class="btn btn-sm btn-danger"
-                                (click)="property.showDetails = !property.showDetails">
-                                Close
-                            </p-button> -->
-
+                            <p> {{ property.description }}</p>
+                            <div class="expire-property float-right" (click)="changePropertyStatus(property.id)"
+                                *ngIf="property.status===1">
+                                Set as Expired
+                            </div>
                         </div>
                     </div>
                 </div>
             </ng-template>
-            <!-- end -->
         </p-card>
+        <!-- Property card end -->
     </div>
 </div>

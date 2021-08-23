@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Properties } from '../shared/common.model';
-import { PropertiesSortFields, PropertyStatus } from '../shared/constants';
+import {  PropertyStatus } from '../shared/constants';
 import { PropertiesService } from '../shared/properties.service';
 import { faBed } from '@fortawesome/free-solid-svg-icons';
 import { faBath } from '@fortawesome/free-solid-svg-icons';
@@ -19,10 +19,6 @@ export class PropertyCardComponent implements OnInit {
   filteredProperties: Properties[] = [];
   errorMessage: string = '';
   constructor(private propertiesService: PropertiesService) { }
-  sortField: string = 'price';
-  sortDirection: string = 'asc';
-
-  sortFields = PropertiesSortFields;
   propertyStatus = PropertyStatus;
   selectedPropertyStatus: number = 0;
   allProperties: Properties[] = [];

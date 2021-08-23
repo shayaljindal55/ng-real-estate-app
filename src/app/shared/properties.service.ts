@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { Properties } from './common.model';
 import { map } from 'rxjs/operators';
@@ -11,7 +12,7 @@ export class PropertiesService {
     constructor(private httpClient: HttpClient) { }
     public changePropertyData = new Subject<any>();
     getAllProperties(): Observable<Properties[]> {
-        return this.httpClient.get<Properties[]>("http://localhost:3000"
+        return this.httpClient.get<Properties[]>(environment.backend
             + '/data')
             .pipe(
                 retry(1),

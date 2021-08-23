@@ -4,13 +4,12 @@ import { PropertyCardComponent } from './property-card.component';
 import { SkeletonModule } from 'primeng/skeleton';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
-import { SortByPipe } from '../shared/sort-by.pipe';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
-  declarations: [PropertyCardComponent, SortByPipe],
+  declarations: [PropertyCardComponent],
   imports: [
     CommonModule,
     SkeletonModule,
